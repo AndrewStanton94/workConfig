@@ -33,6 +33,8 @@ syntax enable
 
 set backspace=indent,eol,start
 
+set showbreak=»»
+
 set guioptions-=T
 set linespace=5
 
