@@ -38,6 +38,8 @@ set showbreak=»»
 set guioptions-=T
 set linespace=5
 
+set spell
+
 autocmd BufEnter * setlocal number
 autocmd BufLeave * setlocal nonumber
 
