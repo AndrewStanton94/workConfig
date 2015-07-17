@@ -19,6 +19,7 @@ set cursorline
 set cursorcolumn
 
 set laststatus=2
+set ruler
 set wildmenu
 set wildmode=longest,full
 set ignorecase
@@ -36,6 +37,7 @@ set backspace=indent,eol,start
 set showbreak=»»
 
 set guioptions-=T
+set guioptions-=e
 set linespace=5
 
 set spell
@@ -45,6 +47,8 @@ autocmd BufLeave * setlocal nonumber
 
 inoremap jk <esc>
 
+noremap j gj
+noremap k gk
 noremap Y y$
 noremap <F2> :e $MYVIMRC<CR>
 noremap <S-F2> :so $MYVIMRC<CR>:echo "Config reloaded"<CR>
@@ -74,6 +78,8 @@ iab #C Copyright <C-r>=strftime("%Y")<CR> Smoothwall Ltd.
 colorscheme harlequin
 
 cd $HOME
+
+set mouse=a
 
 "statusline setup
 "Using: https://github.com/scrooloose/vimfiles/blob/master/vimrc#L78
