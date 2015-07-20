@@ -120,7 +120,6 @@ alias sup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgr
 alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
 alias ..="cd .."
 alias ba="scp -r ~/approx/ andrew.stanton@sotonfs.soton.smoothwall.net:"
-#alias bb="cp ~/.bashrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .bashrc && git commit && git push && echo $?"
 alias bb="cp ~/.bashrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .bashrc && git commit && git push && echo $? && clear && echo '.bashrc backup complete'"
 
 RESET="\[\017\]"
@@ -130,8 +129,26 @@ YELLOW="\[\033[33;1m\]"
 GREEN="\[\033[32;1m\]"
 PURPLE="\[\033[35;1m\]"
 BLUE="\[\033[34;1m\]"
-SELECT="if [ \$? -eq 0 ]; then echo \"${GREEN}✔\"; else echo \"${RED}✘\"; fi"
-SELECT="[ \$? -eq 0 ] && echo \"${GREEN}✔\" || echo \"${RED}✘\""
+SELECT="lastValue=\$? && if [ \$lastValue -eq 0 ]
+		then echo \"${GREEN}✔\"
+		else
+			[ \$lastValue -eq 130 ] && echo \"${PURPLE}‽\" ||echo \"${RED}✘ \[\$lastValue\]\"
+		fi"
+
+function lastCmd(){
+	let lc=$?;
+	case $lc in
+		130 )
+			echo "${PURPLE}‽<C-c> Interrupt";;
+		0 )
+			echo "${GREEN}✔ It worked";;
+		* )
+			echo "${RED}✘ [$?]";;
+	esac
+	#echo $lc;
+}
+
+#SELECT=$(lastCmd)
 
 # Throw it all together 
 PS1="${RESET}${BLUE}\u:${PURPLE}\w${NORMAL} \j \`${SELECT}\` \$ ${NORMAL} "
