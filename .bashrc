@@ -120,7 +120,7 @@ alias sup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgr
 alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
 alias ..="cd .."
 alias ba="scp -r ~/approx/ andrew.stanton@sotonfs.soton.smoothwall.net:"
-alias bb="cp ~/.bashrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .bashrc && git commit && echo '.bashrc backup complete'"
+alias bb="cp ~/.bashrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .bashrc && git commit && git push && echo '.bashrc backup complete'"
 
 RESET="\[\017\]"
 NORMAL="\[\033[0m\]"
@@ -129,8 +129,6 @@ YELLOW="\[\033[33;1m\]"
 GREEN="\[\033[32;1m\]"
 PURPLE="\[\033[35;1m\]"
 BLUE="\[\033[34;1m\]"
-SMILEY="${GREEN}✔"
-FROWNY="${RED}✘"
 SELECT="if [ \$? -eq 0 ]; then echo \"${GREEN}✔\"; else echo \"${RED}✘\"; fi"
 SELECT="[ \$? -eq 0 ] && echo \"${GREEN}✔\" || echo \"${RED}✘\""
 
