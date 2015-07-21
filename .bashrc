@@ -151,5 +151,5 @@ function lastCmd(){
 #SELECT=$(lastCmd)
 
 # Throw it all together 
-PS1="${RESET}${BLUE}\u:${PURPLE}\w${NORMAL} \j \`${SELECT}\` \$ ${NORMAL} "
+PS1="${RESET}${BLUE}\u@\h:${PURPLE}\w${NORMAL} \j \`${SELECT}\` \$ ${NORMAL} "
 # user:path; jobs; did last command work; $
