@@ -42,8 +42,11 @@ set linespace=5
 
 set spell
 
+set autoread
+
 autocmd BufEnter * setlocal number
 autocmd BufLeave * setlocal nonumber
+autocmd BufEnter * silent! lcd %:p:h
 
 inoremap jk <esc>
 
