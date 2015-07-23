@@ -121,6 +121,7 @@ alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
 alias ..="cd .."
 alias ba="scp -r ~/approx/ andrew.stanton@sotonfs.soton.smoothwall.net:"
 alias bb="cp ~/.bashrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .bashrc && git commit && git push && echo $? && clear && echo '.bashrc backup complete'"
+alias bv="cd ~/Downloads/workConfig && ./backup.sh && git add .vimrc && git commit && git push && echo $? && clear && echo '.bashrc backup complete' "
 
 RESET="\[\017\]"
 NORMAL="\[\033[0m\]"
