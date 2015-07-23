@@ -152,3 +152,4 @@ filetype plugin indent on    " required
 
 
 let g:colorizer_auto_filetype='css,html,php,vim'
+set omnifunc=syntaxcomplete#Complete
