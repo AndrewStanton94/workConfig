@@ -86,7 +86,13 @@ set mouse=a
 
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/vimfiles/bundle/Vundle.vim
+if has('win32')
+	set rtp+=~/vimfiles/bundle/Vundle.vim
+else
+	set rtp+=~/.vim/bundle/Vundle.vim
+endif
+" has('gui_running')
+
 call vundle#begin()
 
 " let Vundle manage Vundle, required
