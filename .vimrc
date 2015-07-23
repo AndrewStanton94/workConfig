@@ -40,7 +40,7 @@ set guioptions-=T
 set guioptions-=e
 set linespace=5
 
-set spell
+" set spell
 
 set autoread
 
@@ -55,7 +55,7 @@ noremap k gk
 noremap Y y$
 noremap <F2> :e $MYVIMRC<CR>
 noremap <S-F2> :so $MYVIMRC<CR>:echo "Config reloaded"<CR>
-noremap <F8> :NERDTreeToggle<CR>
+noremap <F8> :Explore<CR>
 
 noremap <Left> <C-w>h
 noremap <Right> <C-w>l
@@ -102,10 +102,18 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
 " plugin on GitHub repo
+Plugin 'https://github.com/bling/vim-airline.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
+Plugin 'https://github.com/tpope/vim-obsession.git'
+Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'https://github.com/chrisbra/changesPlugin.git'
-Plugin 'https://github.com/bling/vim-airline.git'
+Plugin 'https://github.com/chrisbra/Colorizer.git'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
+if has('unix')
+	Plugin 'https://github.com/tpope/vim-eunuch.git'
+	Plugin 'https://github.com/tpope/vim-tbone.git'
+endif
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -137,6 +145,10 @@ filetype plugin indent on    " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-autocmd VimEnter * PluginUpdate
+" autocmd VimEnter * PluginUpdate
+
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+
+let g:colorizer_auto_filetype='css,html,php,vim'
