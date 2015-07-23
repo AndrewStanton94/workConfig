@@ -97,7 +97,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'https://github.com/kingbin/vim-arduino.git'
+Plugin 'tpope/vim-commentary'
 Plugin 'https://github.com/chrisbra/changesPlugin.git'
 Plugin 'https://github.com/bling/vim-airline.git'
 
@@ -105,7 +105,6 @@ Plugin 'https://github.com/bling/vim-airline.git'
 " Plugin 'L9'
 Plugin 'bad-whitespace'
 Plugin 'surround.vim'
-Plugin 'comments.vim'
 
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -132,5 +131,6 @@ filetype plugin indent on    " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
+autocmd VimEnter * PluginUpdate
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
