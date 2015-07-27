@@ -56,6 +56,7 @@ noremap Y y$
 noremap <F2> :e $MYVIMRC<CR>
 noremap <S-F2> :so $MYVIMRC<CR>:echo "Config reloaded"<CR>
 noremap <F8> :Explore<CR>
+noremap <F9> :TlistToggle<CR>
 
 noremap <Left> <C-w>h
 noremap <Right> <C-w>l
@@ -110,6 +111,7 @@ Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'https://github.com/chrisbra/changesPlugin.git'
 Plugin 'https://github.com/chrisbra/Colorizer.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 if has('unix')
 	Plugin 'https://github.com/tpope/vim-eunuch.git'
 	Plugin 'https://github.com/tpope/vim-tbone.git'
