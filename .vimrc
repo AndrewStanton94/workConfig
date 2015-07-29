@@ -49,6 +49,10 @@ autocmd BufEnter * setlocal number
 autocmd BufLeave * setlocal nonumber
 autocmd BufEnter * silent! lcd %:p:h
 
+autocmd FileType perl set makeprg=perl\ -c\ %\ $*
+autocmd FileType perl set errorformat=%f:%l:%m
+" autocmd FileType perl set autowrite
+
 inoremap jk <esc>
 
 noremap j gj
