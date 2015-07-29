@@ -118,6 +118,8 @@ Plugin 'https://github.com/chrisbra/Colorizer.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 if has('unix')
+	Plugin 'https://github.com/scrooloose/syntastic.git'
+		let g:syntastic_enable_perl_checker = 1
 	Plugin 'https://github.com/tpope/vim-eunuch.git'
 	Plugin 'https://github.com/tpope/vim-tbone.git'
 endif
