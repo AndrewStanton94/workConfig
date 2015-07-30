@@ -1,6 +1,9 @@
 set nocompatible
 set encoding=utf-8
 
+set list
+set listchars=tab:⇒\ ,eol:$
+
 set ff=unix
 
 set tabstop=4       " The width of a TAB is set to 4.  Still it is a \t. It is just that Vim will interpret it to be having a width of 4.
@@ -44,6 +47,11 @@ set linespace=5
 " set spell
 
 set autoread
+
+let g:netrw_browse_split=2
+
+set matchpairs+=<:>
+runtime macros/matchit.vim
 
 autocmd BufEnter * setlocal number
 autocmd BufLeave * setlocal nonumber
@@ -117,6 +125,8 @@ Plugin 'https://github.com/chrisbra/changesPlugin.git'
 Plugin 'https://github.com/chrisbra/Colorizer.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plugin 'https://github.com/vim-scripts/taglist.vim.git'
+Plugin 'https://github.com/godlygeek/tabular.git'
+Plugin 'https://github.com/vim-perl/vim-perl.git'
 if has('unix')
 	Plugin 'https://github.com/scrooloose/syntastic.git'
 		" Syntastic Plugin Settings
@@ -175,3 +185,5 @@ filetype plugin indent on    " required
 
 let g:colorizer_auto_filetype='css,html,php,vim'
 set omnifunc=syntaxcomplete#Complete
+
+" %s/\n\|\t\|\ //g
