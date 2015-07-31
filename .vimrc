@@ -22,6 +22,9 @@ set autoindent
 set cursorline
 set cursorcolumn
 
+set colorcolumn=80
+hi ColorColumn ctermbg=darkred
+
 set laststatus=2
 set ruler
 set wildmenu
