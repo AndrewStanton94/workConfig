@@ -130,7 +130,7 @@ Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 Plugin 'https://github.com/godlygeek/tabular.git'
 Plugin 'https://github.com/vim-perl/vim-perl.git'
-if has('unix')
+
 	Plugin 'https://github.com/scrooloose/syntastic.git'
 		" Syntastic Plugin Settings
 		let g:syntastic_always_populate_loc_list = 1
@@ -142,10 +142,12 @@ if has('unix')
 			\ "active_filetypes" : [],
 			\ "passive_filetypes" : []
 		\ }
+		let g:airline#extensions#syntastic#enabled = 1
+
+if has('unix')
 		" "				" Syntastic - Perl Checker Settings
 		let g:syntastic_enable_perl_checker = 1
 		let g:syntastic_perl_checkers = [ 'perl', 'podchecker', 'perlcritic' ]
-		let g:airline#extensions#syntastic#enabled = 1
 	Plugin 'https://github.com/tpope/vim-eunuch.git'
 	Plugin 'https://github.com/tpope/vim-tbone.git'
 endif
