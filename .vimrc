@@ -94,6 +94,7 @@ noremap <C-S-Down> ddp
 noremap <leader>p "+p
 
 iab #C Copyright <C-r>=strftime("%Y")<CR> Smoothwall Ltd.
+cab W w!
 
 colorscheme harlequin
 
