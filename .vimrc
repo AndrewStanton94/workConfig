@@ -95,6 +95,7 @@ noremap <leader>p "+p
 
 iab #C Copyright <C-r>=strftime("%Y")<CR> Smoothwall Ltd.
 cab W w!
+cab E e!
 
 colorscheme harlequin
 
