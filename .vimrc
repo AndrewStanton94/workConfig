@@ -1,6 +1,15 @@
 set nocompatible
 set encoding=utf-8
 
+" vim's vimrc_example and msvim already sets up backup and swap
+" set swap(.swp),backup(~),undo(.udf) directory to vim installation
+" Please make sure the directory exists otherwise current directory will be used
+set dir=E:\\bak\\vim\\swp
+set backupdir=E:\\bak\\vim\\bak
+" Remember the undo history for file, doesn't work with file collisions
+set udf
+set udir=E:\\bak\\vim\\undo
+
 set list
 set listchars=tab:⇒\ ,eol:$
 
@@ -65,6 +74,12 @@ autocmd FileType perl set errorformat=%f:%l:%m
 " autocmd FileType perl set autowrite
 
 inoremap jk <esc>
+" These commands aren't written to undo history. <c-g>u fixes this.
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
+" Each return is a new undo point
+inoremap <CR> <C-G>u<CR>
 
 noremap j gj
 noremap k gk
@@ -192,5 +207,17 @@ filetype plugin indent on    " required
 
 let g:colorizer_auto_filetype='css,html,php,vim'
 set omnifunc=syntaxcomplete#Complete
+
+" let Tlist_Ctags_Cmd='C:\Program Files\ctags58\ctags.exe'
+let Tlist_Auto_Update = 0
+let Tlist_Display_Prototype = 1
+let Tlist_Display_Tag_Scope = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Inc_Winwidth = 0	"Don't resize window on open taglist
+let Tlist_Show_Menu = 1		"Gvim
+" let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 40
 
 " %s/\n\|\t\|\ //g
