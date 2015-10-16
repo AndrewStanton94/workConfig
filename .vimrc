@@ -99,6 +99,7 @@ noremap k gk
 noremap Y y$
 noremap <F2> :e $MYVIMRC<CR>
 noremap <S-F2> :so $MYVIMRC<CR>:echo "Config reloaded"<CR>
+nnoremap <F5> :silent! :e!<CR>G
 noremap <F8> :Explore<CR>
 noremap <F9> :TlistToggle<CR>
 
