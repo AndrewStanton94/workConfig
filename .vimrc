@@ -240,6 +240,20 @@ endfunction
 
 nnoremap 0 call Alt0()<cr>
 nnoremap <k0> :call Alt0()<cr>
+
+function Refresh()
+    let originalLine=line(".")
+    :silent! :e
+    normal G
+    let newLine=line(".")
+    " echo originalLine
+    " echo newLine
+    if originalLine != newLine
+        echo "Line changed"
+    else
+        echo "No change"
+    endif
+endfunction
 "}}}
 
  " vim:foldmethod=marker:
