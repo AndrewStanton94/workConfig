@@ -74,8 +74,11 @@ set matchpairs+=<:>
 " runtime macros/matchit.vim
 
 "{{{ autocommands
+autocmd BufEnter * setlocal relativenumber
 autocmd BufEnter * setlocal number
+autocmd BufLeave * setlocal norelativenumber
 autocmd BufLeave * setlocal nonumber
+
 autocmd BufEnter * silent! lcd %:p:h
 
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
@@ -97,7 +100,6 @@ noremap k gk
 noremap Y y$
 noremap <F2> :e $MYVIMRC<CR>
 noremap <S-F2> :so $MYVIMRC<CR>:echo "Config reloaded"<CR>
-nnoremap <F5> :silent! :e<CR>G
 noremap <F8> :Explore<CR>
 noremap <F9> :TlistToggle<CR>
 
@@ -123,6 +125,9 @@ noremap <space> za
 
 vnoremap < <gv
 vnoremap > >gv
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 "}}}
 
 iab #C Copyright <C-r>=strftime("%Y")<CR> Smoothwall Ltd.
@@ -227,33 +232,30 @@ let Tlist_WinWidth = 40
 "}}}
 
 "{{{
-function Alt0()
-    " echo virtcol('.')
+function SmartStartLine()
     if virtcol('.') != 1
         normal |
-        " echo 'runining 0'
+        echo "|"
     else
         normal ^
-        " echo 'runining ^'
+        echo "^"
     endif
 endfunction
-
-nnoremap 0 call Alt0()<cr>
-nnoremap <k0> :call Alt0()<cr>
+nnoremap 0 :call SmartStartLine()<cr>
+nnoremap <k0> :call SmartStartLine()<cr>
 
 function Refresh()
     let originalLine=line(".")
     :silent! :e
     normal G
     let newLine=line(".")
-    " echo originalLine
-    " echo newLine
     if originalLine != newLine
-        echo "Line changed"
+        echo "Line changed: δ" newLine-originalLine
     else
         echo "No change"
     endif
 endfunction
+nnoremap <F5> :silent :call Refresh()<cr>
 "}}}
 
  " vim:foldmethod=marker:
