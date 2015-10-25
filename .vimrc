@@ -14,11 +14,10 @@ set encoding=utf-8
 
 set list
 set listchars=tab:⇒\ ,eol:$
-set list
 set listchars=tab:⇒\ ,eol:•,trail:ᛋ
 set showbreak=»»
 
-set ff=unix
+set fileformat=unix
 
 "{{{ Tab stuff
 set tabstop=4       " The width of a TAB is set to 4.  Still it is a \t. It is just that Vim will interpret it to be having a width of 4.
@@ -60,13 +59,9 @@ syntax enable
 
 set backspace=indent,eol,start
 
-set showbreak=»»
-
 set guioptions-=T
 set guioptions-=e
 set linespace=5
-
-" set spell
 
 let g:netrw_browse_split=2
 
@@ -74,16 +69,16 @@ set matchpairs+=<:>
 " runtime macros/matchit.vim
 
 "{{{ autocommands
+autocmd BufEnter * silent! lcd %:p:h
 autocmd BufEnter * setlocal relativenumber
 autocmd BufEnter * setlocal number
 autocmd BufLeave * setlocal norelativenumber
 autocmd BufLeave * setlocal nonumber
 
-autocmd BufEnter * silent! lcd %:p:h
+autocmd BufRead log.txt* setlocal syntax=log4net
 
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 autocmd FileType perl set errorformat=%f:%l:%m
-" autocmd FileType perl set autowrite
 "}}}
 
 "{{{ Mappings
@@ -128,14 +123,13 @@ vnoremap > >gv
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+iabbrev #C Copyright <C-r>=strftime("%Y")<CR> Smoothwall Ltd.
+cabbrev W w!
+cabbrev E e!
 "}}}
 
-iab #C Copyright <C-r>=strftime("%Y")<CR> Smoothwall Ltd.
-cab W w!
-cab E e!
-
 colorscheme harlequin
-colorscheme elflord
 colorscheme distinguished
 
 cd $HOME
@@ -250,12 +244,12 @@ function Refresh()
     normal G
     let newLine=line(".")
     if originalLine != newLine
-        echo "Line changed: δ" newLine-originalLine
+        echo "Line changed: Δ" newLine-originalLine
     else
         echo "No change"
     endif
 endfunction
-nnoremap <F5> :silent :call Refresh()<cr>
+nnoremap <F5> :call Refresh()<cr>
 "}}}
 
  " vim:foldmethod=marker:
