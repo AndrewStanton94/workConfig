@@ -171,6 +171,7 @@ if has('unix')
 		let g:syntastic_perl_checkers = [ 'perl', 'podchecker', 'perlcritic' ]
 	Plugin 'https://github.com/tpope/vim-eunuch.git'
 	Plugin 'https://github.com/tpope/vim-tbone.git'
+	Plugin 'https://github.com/guns/xterm-color-table.vim.git'
 endif
 
 " plugin from http://vim-scripts.org/vim/scripts.html
