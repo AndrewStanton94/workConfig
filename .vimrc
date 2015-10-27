@@ -253,4 +253,6 @@ endfunction
 nnoremap <F5> :call Refresh()<cr>
 "}}}
 
+set secure
+
  " vim:foldmethod=marker:
