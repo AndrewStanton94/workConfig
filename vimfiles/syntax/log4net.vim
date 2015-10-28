@@ -13,11 +13,11 @@ syn match   messagesDate        contained display '\d\{4}-\d\d-\d\d *'
             \ nextgroup=messagesHour 
 syn match   messagesHour        contained display '\d\d:\d\d:\d\d,\d\d\d\s*' 
             \ nextgroup=messagesThreadId
-syn match   messagesThreadId    contained display '\[\d*\]\s*'
+syn match   messagesThreadId    contained display '\[\s*\d*\]\s*'
             \ nextgroup=messagesLevel,messagesLevelError
 syn match   messagesLevel       contained display '\(INFO\|DEBUG\)\s*' 
             \ nextgroup=messagesContext
-syn match   messagesLevelError       contained display '\(FATAL\|ERROR\)\s*' 
+syn match   messagesLevelError       contained display '\(FATAL\|WARN\|ERROR\)\s*' 
             \ nextgroup=messagesContext
 syn match   messagesContext     contained display '[a-zA-Z.]*\s'
             \ nextgroup=messagesLoc
@@ -33,9 +33,9 @@ syn region   messagesTextError  start=/\-\s/ end=/$/  matchgroup=messagesLevelEr
 hi def link messagesDate Type
 hi def link messagesHour Type
 hi def link messagesThreadId Identifier 
-hi def link messagesLevel Normal
+hi def link messagesLevel Constant
 hi def link messagesLevelError ErrorMsg
-hi def link messagesText ErrorMsg 
+hi def link messagesText ErrorMsg
 "hi def link messagesTextError ErrorMsg
 hi def link messagesContext Normal
 hi def link messagesLoc Constant
