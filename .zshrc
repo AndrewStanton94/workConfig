@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/andrew/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -94,4 +94,5 @@ alias bz="cp ~/.zshrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && gi
 alias bv="cd ~/Downloads/workConfig && ./backup.sh && git add .vimrc && git commit && git push && echo $? && clear && echo '.vimrc backup complete' "
 alias asf="libreoffice /media/andrew/TI31061100A/Users/Andrew/Dropbox/_ASF.ods &"
 
-alias ta="~/ta.zsh"
+# alias ta="~/ta.zsh"
+alias ta='tmux attach \; choose-tree'
