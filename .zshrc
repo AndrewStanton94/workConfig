@@ -88,11 +88,13 @@ export TERM="xterm-256color"
 
 alias sup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
 alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
-alias ba="scp -r ~/approx/ andrew.stanton@sotonfs.soton.smoothwall.net:"
-alias bb="cp ~/.bashrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .bashrc && git commit && git push && echo $? && clear && echo '.bashrc backup complete'"
 alias bz="cp ~/.zshrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .zshrc && git commit && git push && echo $? && clear && echo '.zshrc backup complete'"
 alias bv="cd ~/Downloads/workConfig && ./backup.sh && git add .vimrc && git commit && git push && echo $? && clear && echo '.vimrc backup complete' "
 alias asf="libreoffice /media/andrew/TI31061100A/Users/Andrew/Dropbox/_ASF.ods &"
 
 # alias ta="~/ta.zsh"
 alias ta='tmux attach \; choose-tree'
+
+soton() {
+    scp "$1" "andrew.stanton@sotonfs:"
+}
