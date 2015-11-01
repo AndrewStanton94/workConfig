@@ -172,6 +172,7 @@ if has('unix')
 	Plugin 'https://github.com/tpope/vim-eunuch.git'
 	Plugin 'https://github.com/tpope/vim-tbone.git'
 	Plugin 'https://github.com/guns/xterm-color-table.vim.git'
+    Plugin 'tmux-plugins/vim-tmux'
 endif
 
 " plugin from http://vim-scripts.org/vim/scripts.html
