@@ -98,3 +98,8 @@ alias ta='tmux attach \; choose-tree'
 soton() {
     scp "$1" "andrew.stanton@sotonfs:"
 }
+
+cpf() {
+    cp "$1" -t "$2"
+    cd "$2"
+}
