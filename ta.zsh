@@ -1,12 +1,29 @@
+#!/bin/zsh
 ta() {
-    isModern
-    if [ $? -eq 1 ]
+    sessions=$(tmux list-sessions 2>/dev/null)
+    if [ "$sessions" = "" ]
     then
-        echo "Yay Modern"
-        tmux attach \; choose-tree
+        echo "Creating first session, name: "
+        read sessionName
+        tmux new -s $sessionName
     else
-        echo "Nope Retro"
-        oldTa
+        numberOfSessions=$(echo "$sessions"| wc -l)
+        if [ "$numberOfSessions" -gt 1 ]
+        then
+            isModern
+            if [ $? -eq 1 ]
+            then
+                echo "Yay Modern"
+                tmux attach \; choose-tree
+            else
+                echo "Nope Retro"
+                echo "$sessions"
+                read -p "Choose session: " selectedSession
+                tmux a -t $selectedSession
+            fi
+        else
+            tmux a
+        fi
     fi
 }
 
@@ -24,25 +41,6 @@ isModern() {
             return 1
         else
             return 0
-        fi
-    fi
-}
-
-oldTa() {
-    sessions=$(tmux list-sessions)
-    num=$(echo "$sessions"| wc -l)
-    if [ "$sessions" = "" ];
-    then
-        read -p "Creating first session, name: " sessionName
-        tmux new -s $sessionName
-    else
-        if [ "$num" -gt 1 ]
-        then
-            echo "$sessions"
-            read -p "Choose session: " selectedSession
-            tmux a -t $selectedSession
-        else
-            tmux a
         fi
     fi
 }
