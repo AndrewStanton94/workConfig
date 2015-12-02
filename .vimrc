@@ -93,6 +93,7 @@ inoremap <CR> <C-G>u<CR>
 noremap j gj
 noremap k gk
 noremap Y y$
+noremap <F1> :h <C-r><C-w><CR>
 noremap <F2> :e $MYVIMRC<CR>
 noremap <S-F2> :so $MYVIMRC<CR>:echo "Config reloaded"<CR>
 noremap <F8> :Explore<CR>
@@ -228,7 +229,7 @@ let Tlist_WinWidth = 40
 "}}}
 
 "{{{
-function SmartStartLine()
+function! SmartStartLine()
     if virtcol('.') != 1
         normal |
         echo "|"
@@ -240,7 +241,7 @@ endfunction
 nnoremap 0 :call SmartStartLine()<cr>
 nnoremap <k0> :call SmartStartLine()<cr>
 
-function Refresh()
+function! Refresh()
     let originalLine=line(".")
     :silent! :e
     normal G
