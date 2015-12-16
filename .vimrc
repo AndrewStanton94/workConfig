@@ -153,25 +153,27 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " plugin on GitHub repo
-Plugin 'https://github.com/bling/vim-airline.git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'https://github.com/tpope/vim-obsession.git'
-Plugin 'https://github.com/tpope/vim-dispatch.git'
-Plugin 'https://github.com/chrisbra/changesPlugin.git'
-Plugin 'https://github.com/chrisbra/Colorizer.git'
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/vim-scripts/taglist.vim.git'
-Plugin 'https://github.com/godlygeek/tabular.git'
-Plugin 'https://github.com/vim-perl/vim-perl.git'
 
-	Plugin 'https://github.com/scrooloose/syntastic.git'
+Plugin 'https://github.com/bling/vim-airline.git'
+Plugin 'https://github.com/chrisbra/Colorizer.git'
+Plugin 'https://github.com/chrisbra/changesPlugin.git'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plugin 'https://github.com/godlygeek/tabular.git'
+Plugin 'https://github.com/scrooloose/syntastic.git'
+Plugin 'https://github.com/vim-perl/vim-perl.git'
+Plugin 'https://github.com/vim-scripts/taglist.vim.git'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch.git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-obsession.git'
+Plugin 'tpope/vim-unimpaired'
+
 if has('unix')
 		" "				" Syntastic - Perl Checker Settings
 		let g:syntastic_enable_perl_checker = 1
 		let g:syntastic_perl_checkers = [ 'perl', 'podchecker', 'perlcritic' ]
-	Plugin 'https://github.com/tpope/vim-eunuch.git'
-	Plugin 'https://github.com/tpope/vim-tbone.git'
+	Plugin 'tpope/vim-eunuch.git'
+	Plugin 'tpope/vim-tbone.git'
 	Plugin 'https://github.com/guns/xterm-color-table.vim.git'
     Plugin 'tmux-plugins/vim-tmux'
 endif
