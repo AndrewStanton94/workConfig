@@ -130,8 +130,6 @@ cabbrev W w!
 cabbrev E e!
 "}}}
 
-colorscheme harlequin
-colorscheme distinguished
 
 cd $HOME
 
@@ -154,19 +152,28 @@ Plugin 'gmarik/Vundle.vim'
 
 " plugin on GitHub repo
 
-Plugin 'https://github.com/bling/vim-airline.git'
-Plugin 'https://github.com/chrisbra/Colorizer.git'
-Plugin 'https://github.com/chrisbra/changesPlugin.git'
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/godlygeek/tabular.git'
-Plugin 'https://github.com/scrooloose/syntastic.git'
-Plugin 'https://github.com/vim-perl/vim-perl.git'
-Plugin 'https://github.com/vim-scripts/taglist.vim.git'
+Plugin 'bad-whitespace'
+Plugin 'bling/vim-airline.git'
+Plugin 'chrisbra/Colorizer.git'
+Plugin 'chrisbra/changesPlugin.git'
+Plugin 'ctrlpvim/ctrlp.vim.git'
+Plugin 'godlygeek/tabular.git'
+Plugin 'lokaltog/vim-distinguished'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'surround.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-obsession.git'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-perl/vim-perl.git'
+Plugin 'vim-scripts/taglist.vim.git'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 
 if has('unix')
 		" "				" Syntastic - Perl Checker Settings
@@ -178,21 +185,9 @@ if has('unix')
     Plugin 'tmux-plugins/vim-tmux'
 endif
 
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-Plugin 'bad-whitespace'
-Plugin 'surround.vim'
-
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+call vundle#end()
+filetype plugin indent on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -234,6 +229,9 @@ let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 40
 "}}}
 "}}}
+
+" colorscheme harlequin
+colorscheme distinguished
 
 "{{{
 function! SmartStartLine()
