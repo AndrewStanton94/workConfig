@@ -19,4 +19,11 @@ morsmordre(){
 	read commitMessage
 	git commit -am "$commitMessage"
 	git push
+
+	echo "Shutdown in 10 seconds"
+	for i in {1..5}
+	do
+		echo "$i"
+		sleep 1
+	done
 }
