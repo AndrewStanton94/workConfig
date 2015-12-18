@@ -26,4 +26,5 @@ morsmordre(){
 		echo "$i"
 		sleep 1
 	done
+	sudo poweroff
 }
