@@ -1,0 +1,26 @@
+from debian repos
+vim
+tmux
+zsh
+zsh-doc
+curl
+exuberant-ctags
+
+from other sources
+	git:
+		oh-my-zsh
+		vundle
+		https://github.com/powerline/fonts.git
+
+	follow instructions from website
+		weechat
+
+myconfig
+	vim
+	zsh
+	tmux
+	weechat
+	git config --global push.default simple
+
+	for trackball:
+		gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
