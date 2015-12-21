@@ -5,6 +5,7 @@ zsh
 zsh-doc
 curl
 exuberant-ctags
+netcat
 
 from other sources
 	git:

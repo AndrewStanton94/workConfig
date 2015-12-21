@@ -85,3 +85,4 @@ cpf() {
 if [ -f ~/.bash_smoothwall ]; then
     . ~/.bash_smoothwall
 fi
+export PATH=~/.rakudobrew/bin:$PATH
