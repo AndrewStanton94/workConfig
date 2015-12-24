@@ -1,0 +1,12 @@
+vim
+vim-doc
+vim-scripts
+git-doc
+gitk
+gitweb
+tmux
+zsh
+zsh-doc
+curl
+exuberant-ctags
+netcat

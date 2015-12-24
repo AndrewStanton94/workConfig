@@ -1,12 +1,3 @@
-from debian repos
-vim
-tmux
-zsh
-zsh-doc
-curl
-exuberant-ctags
-netcat
-
 from other sources
 	git:
 		oh-my-zsh
