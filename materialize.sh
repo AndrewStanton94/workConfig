@@ -20,6 +20,7 @@ unpackConfig() {
 	cp -vu "$WORKCONFIG/.vimrc" ~
 	cp -vu "$WORKCONFIG/.tmux.conf" ~
 	cp -vu "$WORKCONFIG/morsmordre.zsh" ~
+	cp -vu "$WORKCONFIG/materialize.sh" ~
 	cp -vu "$WORKCONFIG/ta.zsh" ~
 
 	cp -vu "$WORKCONFIG/.weechat/weechat.conf" ~/.weechat/

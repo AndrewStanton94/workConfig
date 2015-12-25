@@ -8,6 +8,7 @@ packConfig(){
 	cp -vu ~/.vimrc $WORKCONFIG
 	cp -vu ~/.tmux.conf $WORKCONFIG
 	cp -vu ~/morsmordre.zsh $WORKCONFIG
+	cp -vu ~/materialize.sh $WORKCONFIG
 	cp -vu ~/installlist.txt $WORKCONFIG
 	cp -vu ~/ta.zsh $WORKCONFIG
 
