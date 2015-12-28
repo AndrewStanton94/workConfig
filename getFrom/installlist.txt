@@ -13,6 +13,8 @@ myconfig
 	tmux
 	weechat
 	git config --global push.default simple
+	git config --global user.email up683693@myport.ac.uk
+	git config --global user.name "Andrew Stanton"
 
 	for trackball:
 		gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true

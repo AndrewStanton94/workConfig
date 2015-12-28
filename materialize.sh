@@ -6,13 +6,13 @@ getFromApt() {
 }
 
 getFromGit() {
-	# oh-my-zsh
-	sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 	# Vundle
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	# Patched Fonts
 	git clone https://github.com/powerline/fonts.git ~/fonts
 	~/fonts/install.sh
+	# oh-my-zsh
+	sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 }
 
 unpackConfig() {
@@ -30,4 +30,14 @@ unpackConfig() {
 materialize(){
 	echo "Assuming update: unpacking config only"
 	unpackConfig
+}
+
+colonize(){
+	echo "First time set up"
+	getFromApt
+	unpackConfig
+	getFromGit
+	git config --global push.default simple
+	git config --global user.email up683693@myport.ac.uk
+	git config --global user.name "Andrew Stanton"
 }
