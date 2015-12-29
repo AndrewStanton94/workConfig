@@ -2,7 +2,7 @@
 export WORKCONFIG="$HOME/Downloads/workConfig"
 
 getFromApt() {
-	sudo apt install `cat $HOME/Downloads/workConfig/getFrom/debReb.txt`
+	sudo apt install `cat $WORKCONFIG/getFrom/debReb.txt`
 }
 
 getFromGit() {

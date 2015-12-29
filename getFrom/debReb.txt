@@ -10,3 +10,4 @@ zsh-doc
 curl
 exuberant-ctags
 netcat
+vim-gui-common
