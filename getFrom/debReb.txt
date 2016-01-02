@@ -11,3 +11,6 @@ curl
 exuberant-ctags
 netcat
 vim-gui-common
+lm-sensors
+hddtemp
+conky-all
