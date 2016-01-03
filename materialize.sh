@@ -23,6 +23,8 @@ unpackConfig() {
 	cp -vu "$WORKCONFIG/materialize.sh" ~
 	cp -vu "$WORKCONFIG/ta.zsh" ~
 
+	cp -vu "$WORKCONFIG/conky.conf" ~/.config/conky/
+
 	cp -vu "$WORKCONFIG/.weechat/weechat.conf" ~/.weechat/
 	cp -vu "$WORKCONFIG/.weechat/irc.conf" ~/.weechat/
 }
