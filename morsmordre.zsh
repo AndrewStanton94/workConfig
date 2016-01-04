@@ -11,7 +11,10 @@ packConfig(){
 	cp -vu ~/materialize.sh $WORKCONFIG
 	cp -vu ~/installlist.txt $WORKCONFIG
 	cp -vu ~/ta.zsh $WORKCONFIG
+
+	# New && old
 	cp -vu ~/.config/conky/conky.conf $WORKCONFIG
+	cp -vu ~/.conkyrc $WORKCONFIG
 
 	cp -vu ~/.weechat/weechat.conf "$WORKCONFIG/.weechat/"
 	cp -vu ~/.weechat/irc.conf "$WORKCONFIG/.weechat/"
