@@ -2,7 +2,7 @@ alignment top_right
 background no
 border_width 1
 cpu_avg_samples 2
-default_color white
+default_color green
 default_outline_color white
 default_shade_color white
 draw_borders no
@@ -31,21 +31,21 @@ show_graph_range no
 
 TEXT
 ${font Arial:bold}${color Tan1}HDD ${color DarkSlateGray}${fs_bar /}
-$font${color DimGray}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
-/ $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+${color DimGray}/ $fs_type $alignc ${fs_used /} ${color b72e3f}(${fs_used_perc /}%) ${color DimGray}/ ${fs_size /} ${fs_bar /}
+${color DimGray}ext $fs_type $alignc ${fs_used /media/andrew.stanton/New Volume} ${color b72e3f}(${fs_used_perc /media/andrew.stanton/New Volume}%) ${color DimGray}/ ${fs_size /media/andrew.stanton/New Volume} ${fs_bar /media/andrew.stanton/New Volume}
 $hr
 $entropy_avail $entropy_poolsize ${entropy_bar 4,100}
 ${font Arial:bold:size=10}${color Tan1}SYSTEM ${color DarkSlateGray} ${hr 2}
 ${color grey}Uptime:$color $uptime
 ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
 $hr
-${font Arial:bold:size=10}${color Tan2}NETWORK $font${color DimGray} eth0 ${addr eth0} ${color DarkSlateGray}${hr 2}
-${voffset -5}${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}total/up ${GOTO 300}${alignr}total/dwn
-${font AvantGarde LT ExtraLight:pixelsize=15}${color ffffff}${upspeed eth0} ${GOTO 100}${color ffffff}${downspeed eth0} ${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}${color ffffff}${totalup eth0} ${GOTO 300}${alignr}${color ffffff}${totaldown eth0}
+${font Arial:bold:size=10}${color Tan2}NETWORK $font${color DimGray} eth0 ${addr eth0}${color DarkSlateGray}${hr 2}
+${voffset -5}${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}total/up ${GOTO 300}total/dwn
+${font AvantGarde LT ExtraLight:pixelsize=15}${color ffffff}${upspeed eth0} ${GOTO 100}${color ffffff}${downspeed eth0} ${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}${color ffffff}${totalup eth0} ${GOTO 300}${color ffffff}${totaldown eth0}
 ${color #888888}${downspeedgraph eth0 20,70 ff0000 0000ff} ${color #888888}${upspeedgraph eth0 20,70 0000ff ff0000}
 ${color grey}Frequency (in GHz):$color $freq_g
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
-${font Arial:bold:size=10}${color Tan1}PROCESSORS ${color DarkSlateGray}${cpu 0}% ${hwmon temp 1}°C ${cpubar 5}$font${color DimGray}
+${font Arial:bold:size=10}${color Tan1}PROCESSORS ${color DarkSlateGray}${cpu cpu0}% ${hwmon temp 1}°C ${cpubar cpu0}$font${color DimGray}
 Core1 ${cpu cpu1}% ${cpubar cpu1 10, 100}${GOTO 200}Core2 ${cpu cpu2}% ${cpubar cpu2}
 Core3 ${cpu cpu3}% ${cpubar cpu3 10, 100}${GOTO 200}Core4 ${cpu cpu4}% ${cpubar cpu4}
 ${color grey}Name              PID   CPU%   MEM%
@@ -61,3 +61,4 @@ ${color lightgrey}${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem 
 ${color lightgrey}${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
 ${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${time %H}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${color b72e3f}${time %M}
 ${voffset -120}${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=30}${alignr}${time %A %d %B, %Y}
+$conky_build_arch string
