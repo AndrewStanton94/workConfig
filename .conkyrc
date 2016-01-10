@@ -1,10 +1,11 @@
 alignment top_right
 background no
+    background = true,
 border_width 1
 cpu_avg_samples 2
 default_color green
-default_outline_color white
-default_shade_color white
+default_outline_color green
+default_shade_color green
 draw_borders no
 draw_graph_borders yes
 draw_outline no
@@ -22,6 +23,7 @@ extra_newline no
 own_window yes
 own_window_class Conky
 own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -29,7 +31,7 @@ use_spacer none
 show_graph_scale no
 show_graph_range no
 double_buffer yes
-maximum_width 500
+maximum_width 400
 
 TEXT
 ${font Arial:bold}${color Tan1}HDD ${color DarkSlateGray}${fs_bar 10 /}
@@ -44,14 +46,11 @@ ${font Arial:bold}${color Tan2}NETWORK $font${color DimGray} eth0 ${addr eth0}${
 ${voffset -5}${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}total/up ${GOTO 300}total/dwn
 ${font AvantGarde LT ExtraLight:pixelsize=15}${color ffffff}${upspeed eth0} ${GOTO 100}${color ffffff}${downspeed eth0} ${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}${color ffffff}${totalup eth0} ${GOTO 300}${color ffffff}${totaldown eth0}
 ${color #888888}${downspeedgraph eth0 20,70 ff0000 0000ff} ${color #888888}${upspeedgraph eth0 20,70 0000ff ff0000}
-${color grey}Frequency (in GHz):$color $freq_g
-
-${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+${font Arial:bold}${color Tan1}PROCESSORS ${color DarkSlateGray}${cpu cpu0}% ${hwmon temp 1}°C ${color grey}$freq_g GHz${cpubar cpu0}$font${color DimGray}
 ${cpugraph 000000 ffffff}
-${font Arial:bold}${color Tan1}PROCESSORS ${color DarkSlateGray}${cpu cpu0}% ${hwmon temp 1}°C ${cpubar cpu0}$font${color DimGray}
-Core1 ${cpu cpu1}% ${cpubar cpu1 10, 147}${GOTO 257}Core2 ${cpu cpu2}% ${cpubar cpu2 10, 147}
-Core3 ${cpu cpu3}% ${cpubar cpu3 10, 147}${GOTO 257}Core4 ${cpu cpu4}% ${cpubar cpu4 10, 147}
-
+Core1 ${cpu cpu1}% ${cpubar cpu1 10, 100}${GOTO 200}Core2 ${cpu cpu2}% ${cpubar cpu2 10, 100}
+Core3 ${cpu cpu3}% ${cpubar cpu3 10, 100}${GOTO 200}Core4 ${cpu cpu4}% ${cpubar cpu4 10, 100}
+${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 ${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey}${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey}${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
@@ -64,7 +63,11 @@ ${color lightgrey}${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem 
 ${color lightgrey}${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
 ${color lightgrey}${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
 ${color lightgrey}${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
-${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${time %H}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${color b72e3f}${time %M}
-${voffset -120}${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=30}${alignr}${time %A %d %B, %Y}
-$conky_build_arch string
+${voffset -10}${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${time %H}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${color b72e3f}${time %M}
+${voffset -245}${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=20}
+${time %A}
+${time %d}
+${time %B}
+${time %Y}
+$conky_build_arch
 http://archive09.linux.com/feature/136147
