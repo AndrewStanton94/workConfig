@@ -37,17 +37,22 @@ TEXT
 ${font Arial:bold}${color Tan1}HDD ${color DarkSlateGray}${fs_bar 10 /}
 ${color DimGray}/ $fs_type $alignr ${fs_used /} ${color b72e3f}(${fs_used_perc /}%) ${color DimGray}/ ${fs_size /} ${fs_bar 10, 200 /}
 $hr
-$entropy_avail $entropy_poolsize ${entropy_bar 4,100}
+Δ $entropy_avail/$entropy_poolsize ($entropy_perc%) ${entropy_bar 10}
 ${font Arial:bold}${color Tan1}SYSTEM ${color DarkSlateGray} ${hr 2}
 ${color grey}Uptime:$color $uptime
-${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
-
 $hr
-${font Arial:bold}${color Tan2}NETWORK $font${color DimGray} eth0 ${addr eth0}${color DarkSlateGray}${hr 2}
-${voffset -5}${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}total/up ${GOTO 300}total/dwn
-${font AvantGarde LT ExtraLight:pixelsize=15}${color ffffff}${upspeed eth0} ${GOTO 100}${color ffffff}${downspeed eth0} ${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}${color ffffff}${totalup eth0} ${GOTO 300}${color ffffff}${totaldown eth0}
-${color #888888}${downspeedgraph eth0 20,70 ff0000 0000ff -t} ${color #888888}${upspeedgraph eth0 20,70 0000ff ff0000 -t}
-
+${font Arial:bold}${color Tan2}NETWORK${color DarkSlateGray}${hr 2}
+${if_up eth0}$font${color DimGray}eth0$alignr${addr eth0}
+	${voffset -5}${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}total/up ${GOTO 300}total/dwn
+	${font AvantGarde LT ExtraLight:pixelsize=15}${color ffffff}${upspeed eth0} ${GOTO 100}${color ffffff}${downspeed eth0} ${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}${color ffffff}${totalup eth0} ${GOTO 300}${color ffffff}${totaldown eth0}
+	${color #888888}${downspeedgraph eth0 20,70 ff0000 0000ff -t} ${color #888888}${upspeedgraph eth0 20,70 0000ff ff0000 -t}
+$endif$hr
+${if_up wlan0}
+	$font${color DimGray}wlan0 ${addr wlan0}
+	${voffset -5}${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${color b72e3f}${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}total/up ${GOTO 300}total/dwn
+	${font AvantGarde LT ExtraLight:pixelsize=15}${color ffffff}${upspeed wlan0} ${GOTO 100}${color ffffff}${downspeed wlan0} ${font AvantGarde LT ExtraLight:pixelsize=15}${GOTO 200}${color ffffff}${totalup wlan0} ${GOTO 300}${color ffffff}${totaldown wlan0}
+	${color #888888}${downspeedgraph wlan0 20,70 ff0000 0000ff -t} ${color #888888}${upspeedgraph wlan0 20,70 0000ff ff0000 -t}
+$endif$hr
 ${font Arial:bold}${color Tan1}PROCESSORS ${color DarkSlateGray}${cpu cpu0}% ${hwmon temp 1}°C ${color grey}$freq_g GHz${cpubar cpu0 10}$font${color DimGray}
 ${cpugraph cpu0 000000 ffffff}
 Core1 ${cpu cpu1}% ${cpubar cpu1 10, 100}${GOTO 200}Core2 ${cpu cpu2}% ${cpubar cpu2 10, 100}
@@ -59,18 +64,19 @@ ${color lightgrey}${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color lightgrey}${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${color lightgrey}${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
 
-${font Arial:bold}${color Tan1}MEMORY ($memperc%) $mem / $memmax ${color DarkSlateGray} ${membar 10}
+${font Arial:bold}${color Tan1}MEMORY ($memperc%) $mem / $memmax ${color DarkSlateGray}${membar 10}
 ${memgraph 000000 ffffff -t}
 $font${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey}${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
 ${color lightgrey}${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
 ${color lightgrey}${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
 ${color lightgrey}${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
-${voffset -10}${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${time %H}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${color b72e3f}${time %M}
-${voffset -245}${color ffffff}${font AvantGarde LT ExtraLight:pixelsize=20}
-${time %A}
-${time %d}
-${time %B}
-${time %Y}
-$conky_build_arch
+${font Arial:bold}${color Tan1}SWAP ${color DarkSlateGray}$swap/$swapmax - $swapperc% ${swapbar 10}
+${voffset -10}$color${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${time %H}${font AvantGarde LT ExtraLight:pixelsize=125}${alignr}${color b72e3f}${time %M}
+${voffset -245}$color${font AvantGarde LT ExtraLight:pixelsize=20}
+${color lightgrey}${time %A}
+${color b72e3f}${time %d}
+${color lightgrey}${time %B}
+${color b72e3f}${time %Y}
+${color lightgrey}$conky_build_arch
 http://archive09.linux.com/feature/136147
