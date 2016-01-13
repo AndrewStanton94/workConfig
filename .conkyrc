@@ -65,7 +65,7 @@ ${color lightgrey}${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${color lightgrey}${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
 
 ${font Arial:bold}${color Tan1}MEMORY ($memperc%) $mem / $memmax ${color DarkSlateGray}${membar 10}
-${memgraph 000000 ffffff -t}
+${memgraph 000000 ff0000 -t}
 $font${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey}${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
 ${color lightgrey}${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}

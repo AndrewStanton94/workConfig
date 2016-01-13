@@ -7,26 +7,10 @@ getFromApt() {
 	sudo apt install `cat $WORKCONFIG/getFrom/debReb.txt`
 }
 
-unpackConfig() {
-	echo "Copying config files to home"
-	cp -vu "$WORKCONFIG/.zshrc" ~
-	cp -vu "$WORKCONFIG/.vimrc" ~
-	cp -vu "$WORKCONFIG/.tmux.conf" ~
-	cp -vu "$WORKCONFIG/morsmordre.zsh" ~
-	cp -vu "$WORKCONFIG/materialize.sh" ~
-	cp -vu "$WORKCONFIG/ta.zsh" ~
-
-	# New && old
-	cp -vu "$WORKCONFIG/conky.conf" ~/.config/conky/
-	cp -vu "$WORKCONFIG/.conkyrc" ~
-
-	cp -vu "$WORKCONFIG/.weechat/weechat.conf" ~/.weechat/
-	cp -vu "$WORKCONFIG/.weechat/irc.conf" ~/.weechat/
-}
-
 materialize(){
 	echo "Assuming update: unpacking config only"
-	unpackConfig
+	cd "$WORKCONFIG"
+	git pull
 }
 
 colonize(){

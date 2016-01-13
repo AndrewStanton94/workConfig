@@ -62,8 +62,6 @@ export TERM="xterm-256color"
 
 alias sup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
 alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
-alias bz="cp ~/.zshrc ~/Downloads/workConfig/ && cd ~/Downloads/workConfig && git add .zshrc && git commit && git push && echo $? && clear && echo '.zshrc backup complete'"
-alias bv="cd ~/Downloads/workConfig && ./backup.sh && git add .vimrc && git commit && git push && echo $? && clear && echo '.vimrc backup complete' "
 alias asf="libreoffice /media/andrew/TI31061100A/Users/Andrew/Dropbox/_ASF.ods &"
 
 alias ta="~/ta.zsh"
@@ -82,5 +80,5 @@ if [ -f ~/.bash_smoothwall ]; then
     . ~/.bash_smoothwall
 fi
 
-. ~/materialize.sh
-. ~/morsmordre.zsh
+. ~/Downloads/workConfig/materialize.sh
+. ~/Downloads/workConfig/morsmordre.zsh
