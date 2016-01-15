@@ -34,7 +34,7 @@ double_buffer yes
 maximum_width 400
 
 color0 b72e3f	# Red
-color1 Tan1
+color1 Tan1		# Section title
 color2 DarkSlateGray
 color3 DimGray
 
@@ -50,7 +50,7 @@ ${font Arial:bold}${color1}NETWORK${color2}${hr 2}
 ${if_up eth0}$font${color3}eth0$alignr${addr eth0}
 	${voffset -5}$color0${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${GOTO 200}total/up ${GOTO 300}total/dwn
 	${color3}${upspeed eth0} ${GOTO 100}${downspeed eth0} ${GOTO 200}${totalup eth0} ${GOTO 300}${totaldown eth0}
-	↓${downspeedgraph eth0 20,70 ff0000 0000ff -t} ↑${upspeedgraph eth0 20,70 0000ff ff0000 -t}
+	${voffset 10}↓${voffset -10} ${downspeedgraph eth0 20,70 ff0000 0000ff -t} ${voffset 10}↑${voffset -10}${upspeedgraph eth0 20,70 0000ff ff0000 -t}
 $endif$hr
 ${if_up wlan0}
 	$font${color3}wlan0 ${addr wlan0}
