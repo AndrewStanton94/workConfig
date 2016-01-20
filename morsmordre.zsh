@@ -17,6 +17,7 @@ delayedShutdown(){
 	echo "Shutdown in 10 seconds"
 	for i in {1..10}
 	do
+		cat darkmark.txt
 		echo "$i"
 		sleep 1
 	done
