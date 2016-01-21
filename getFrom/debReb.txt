@@ -14,3 +14,4 @@ vim-gui-common
 lm-sensors
 hddtemp
 conky-all
+xclip

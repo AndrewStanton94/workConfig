@@ -82,3 +82,8 @@ fi
 
 . ~/Downloads/workConfig/materialize.sh
 . ~/Downloads/workConfig/morsmordre.zsh
+
+
+alias setclip='xclip -selection clipboard -i'
+alias getclip='xclip -selection clipboard -o'
+
