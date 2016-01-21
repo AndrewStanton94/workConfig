@@ -13,7 +13,7 @@ draw_shades no
 use_xft yes
 xftfont DejaVu Sans Mono:size=12
 gap_x 5
-gap_y 0
+gap_y 30
 minimum_size 5 5
 net_avg_samples 2
 no_buffers yes
@@ -44,7 +44,7 @@ ${color3}/ $fs_type $alignr ${fs_used /} $color0(${fs_used_perc /}%) ${color3}/ 
 ${font Arial:bold}${color1}SYSTEM ${color2} ${hr 2}
 ${color3}Uptime:$color $uptime
 ${font Arial:bold}${color1}NETWORK${color2}${hr 2}
-${voffset -15}${if_up eth0}$font${color3}eth0$alignr${addr eth0}
+${if_up eth0}$font${color3}eth0$alignr${addr eth0}
 	${voffset -5}$color0${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn${GOTO 200}total/up ${GOTO 300}total/dwn
 	${color3}${upspeed eth0} ${GOTO 100}${downspeed eth0} ${GOTO 200}${totalup eth0} ${GOTO 300}${totaldown eth0}
 	${voffset 10}↓${voffset -10} ${downspeedgraph eth0 20,70 ff0000 0000ff -t} ${voffset 10}↑${voffset -10}${upspeedgraph eth0 20,70 0000ff ff0000 -t}
