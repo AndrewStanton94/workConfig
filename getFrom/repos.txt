@@ -1,0 +1,4 @@
+https://github.com/tmux-plugins/tmux-battery.git
+https://github.com/tmux-plugins/tmux-prefix-highlight.git
+
+https://github.com/tmux-plugins/tmux-sidebar
