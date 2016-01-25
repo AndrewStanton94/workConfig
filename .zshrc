@@ -86,4 +86,4 @@ fi
 
 alias setclip='xclip -selection clipboard -i'
 alias getclip='xclip -selection clipboard -o'
-
+alias cls='clear && ls'
