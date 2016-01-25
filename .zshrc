@@ -64,8 +64,6 @@ alias sup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgr
 alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
 alias asf="libreoffice /media/andrew/TI31061100A/Users/Andrew/Dropbox/_ASF.ods &"
 
-alias ta="~/ta.zsh"
-# alias ta='tmux attach \; choose-tree'
 
 soton() {
     scp "$1" "andrew.stanton@sotonfs:"
@@ -87,3 +85,5 @@ fi
 alias setclip='xclip -selection clipboard -i'
 alias getclip='xclip -selection clipboard -o'
 alias cls='clear && ls'
+alias ta="~/Downloads/workConfig/ta.zsh"
+# alias ta='tmux attach \; choose-tree'
