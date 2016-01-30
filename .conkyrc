@@ -1,6 +1,5 @@
 alignment top_right
-background no
-    background = true,
+background yes
 border_width 1
 cpu_avg_samples 2
 default_color 8700df
@@ -41,7 +40,10 @@ color3 DimGray
 TEXT
 ${font Arial:bold}${color1}HDD ${color2}${fs_bar 12 /}
 ${color3}/ $fs_type $alignr ${fs_used /} $color0(${fs_used_perc /}%) ${color3}/ ${fs_size /} ${fs_bar 12,100 /}
+${if_mounted /media/data }
 ${color3}hdd ${fs_type /media/data} $alignr${fs_used /media/data} $color0(${fs_used_perc /media/data}%) ${color3}/ ${fs_size /media/data} ${fs_bar 12,100 /media/data}
+$else ${voffset -50}
+$endif
 
 
 ${voffset -40}
@@ -56,15 +58,14 @@ ${if_up eth0}$font${color3}eth0$alignr${addr eth0}
 	${color3}${upspeed eth0} ${GOTO 100}${downspeed eth0} ${GOTO 200}${totalup eth0} ${GOTO 300}${totaldown eth0}
 	${voffset 10}↓${voffset -10} ${downspeedgraph eth0 20,175 ff0000 0000ff -t} ${voffset 10}↑${voffset -10}${upspeedgraph eth0 20,175 0000ff ff0000 -t}
 $endif
-${if_up wlan0}
-	${voffset -20}$font${color3}wlan0 ${addr wlan0}
+${if_up wlan0}${voffset -20}$font${color3}wlan0 ${addr wlan0}
 	${voffset -5}$color0${font AvantGarde LT ExtraLight:pixelsize=15}net/up ${GOTO 100}net/dwn$color0${GOTO 200}total/up ${GOTO 300}total/dwn
 	${color3}${upspeed wlan0} ${GOTO 100}${downspeed wlan0} ${GOTO 200}${totalup wlan0} ${GOTO 300}${totaldown wlan0}
 	${voffset 10}↓${voffset -10}${downspeedgraph wlan0 20,175 ff0000 0000ff -t} ${voffset 10}↑${voffset -10}${upspeedgraph wlan0 20,175 0000ff ff0000 -t}
-$endif${voffset -30}$hr
+$endif
 
 
-${voffset -40}
+${voffset -70}
 ${font Arial:bold}${color1}PROCESSORS ${color2}${cpu cpu0}% ${hwmon temp 1}°C $freq_g GHz ${cpubar cpu0 12}$font${color3}
 ${cpugraph cpu0 000000 ff0000}
 Core1 ${cpu cpu1}% ${GOTO 100}${cpubar cpu1 12, 100}${GOTO 199} Core2 ${cpu cpu2}% ${GOTO 300}${cpubar cpu2 12, 100}

@@ -1,5 +1,7 @@
-set nocompatible
-set encoding=utf-8
+if !has('nvim')
+	set nocompatible
+	set encoding=utf-8
+endif
 
 "{{{
 " vim's vimrc_example and msvim already sets up backup and swap
@@ -13,7 +15,6 @@ set encoding=utf-8
 "}}}
 
 set list
-set listchars=tab:⇒\ ,eol:$
 set listchars=tab:⇒\ ,eol:•,trail:ᛋ
 set showbreak=»»
 
@@ -24,17 +25,23 @@ set tabstop=4       " The width of a TAB is set to 4.  Still it is a \t. It is j
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 " set expandtab       " Spaces are better than a tab character
-set smarttab
+if !has('nvim')
+	set smarttab
+endif
 "}}}
 
 "{{{ Search
-set incsearch
-set hlsearch
+if !has('nvim')
+	set incsearch
+	set hlsearch
+endif
 set smartcase
 set wrapscan
 "}}}
 
-set autoindent
+if !has('nvim')
+	set autoindent
+endif
 
 "{{{
 set cursorline
@@ -43,13 +50,17 @@ set colorcolumn=80
 hi ColorColumn ctermbg=darkred
 "}}}
 
-set laststatus=2
+if !has('nvim')
+	set laststatus=2
+endif
 set ruler
-set wildmenu
+if !has('nvim')
+	set wildmenu
+	set autoread                  " watch for file changes
+endif
 set wildmode=longest,full
 set ignorecase
 set smartcase
-set autoread                  " watch for file changes
 set showmode
 set showcmd
 " filetype on                   " Enable filetype detection
@@ -57,7 +68,9 @@ set showcmd
 " filetype plugin on            " Enable filetype-specific plugins
 syntax enable
 
-set backspace=indent,eol,start
+if !has('nvim')
+	set backspace=indent,eol,start
+endif
 
 set guioptions-=T
 set guioptions-=e
@@ -133,7 +146,9 @@ cabbrev E e!
 
 cd $HOME
 
-set mouse=a
+if !has('nvim')
+	set mouse=a
+endif
 
 "{{{ Plugins
 "{{{ Vundle
@@ -173,6 +188,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'smancill/conky-syntax.vim'
 
 
 if has('unix')
