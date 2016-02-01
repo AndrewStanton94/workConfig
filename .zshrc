@@ -80,10 +80,12 @@ fi
 
 . ~/Downloads/workConfig/materialize.sh
 . ~/Downloads/workConfig/morsmordre.zsh
+. ~/Downloads/workConfig/c
 
 
 alias setclip='xclip -selection clipboard -i'
 alias getclip='xclip -selection clipboard -o'
 alias cls='clear && ls'
 alias ta="~/Downloads/workConfig/ta.zsh"
+alias e="nvim"
 # alias ta='tmux attach \; choose-tree'
