@@ -47,9 +47,6 @@ export LANG=en_GB.UTF-8
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
@@ -58,7 +55,8 @@ export LANG=en_GB.UTF-8
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
+export TERM="screen-256color"
 
 alias sup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
 alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
@@ -88,4 +86,3 @@ alias getclip='xclip -selection clipboard -o'
 alias cls='clear && ls'
 alias ta="~/Downloads/workConfig/ta.zsh"
 alias e="nvim"
-# alias ta='tmux attach \; choose-tree'
