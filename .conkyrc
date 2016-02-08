@@ -38,12 +38,12 @@ color2 DarkSlateGray
 color3 DimGray
 
 TEXT
-${if_existing /home/andrew/.offset true}${voffset -20}$else DERP ${endif}
+${if_existing /home/andrew/.offset true}${voffset -20}$else ${voffset 10}${endif}
 ${font Arial:bold}${color1}HDD ${color2}${fs_bar 12 /}
 ${color3}/ $fs_type $alignr ${fs_used /} $color0(${fs_used_perc /}%) ${color3}/ ${fs_size /} ${fs_bar 12,100 /}
 ${if_mounted /media/data }
 ${color3}hdd ${fs_type /media/data} $alignr${fs_used /media/data} $color0(${fs_used_perc /media/data}%) ${color3}/ ${fs_size /media/data} ${fs_bar 12,100 /media/data}
-$else ${voffset -50}
+$else ${voffset -40}
 $endif
 
 
