@@ -71,7 +71,7 @@ ${if_up p2p1}${voffset -20}$font${color3}p2p1 ${addr p2p1}
 $endif
 
 
-${voffset -70}
+${voffset -100}
 ${font Arial:bold}${color1}PROCESSORS ${color2}${cpu cpu0}% ${hwmon temp 1}°C $freq_g GHz ${cpubar cpu0 12}$font${color3}
 ${cpugraph cpu0 000000 ff0000}
 Core1 ${cpu cpu1}% ${GOTO 100}${cpubar cpu1 12, 100}${GOTO 199} Core2 ${cpu cpu2}% ${GOTO 300}${cpubar cpu2 12, 100}
