@@ -47,11 +47,6 @@ $else ${voffset -40}
 $endif
 
 
-${voffset -40}
-${font Arial:bold}${color1}SYSTEM ${color2} ${hr 2}
-${color3}Uptime:$color $uptime
-
-
 ${voffset -50}
 ${font Arial:bold}${color1}NETWORK${color2}${hr 2}
 ${if_up eth0}$font${color3}eth0$alignr${addr eth0}
@@ -71,7 +66,7 @@ ${if_up p2p1}${voffset -20}$font${color3}p2p1 ${addr p2p1}
 $endif
 
 
-${voffset -100}
+${voffset -80}
 ${font Arial:bold}${color1}PROCESSORS ${color2}${cpu cpu0}% ${hwmon temp 1}°C $freq_g GHz ${cpubar cpu0 12}$font${color3}
 ${cpugraph cpu0 000000 ff0000}
 Core1 ${cpu cpu1}% ${GOTO 100}${cpubar cpu1 12, 100}${GOTO 199} Core2 ${cpu cpu2}% ${GOTO 300}${cpubar cpu2 12, 100}
@@ -84,7 +79,7 @@ ${color3}${top pid 3} ${top name 3}  $alignr$color0${top cpu 3} $color${top mem 
 ${color3}${top pid 4} ${top name 4}  $alignr$color0${top cpu 4} $color${top mem 4}
 
 
-${voffset -40}
+${voffset -50}
 ${font Arial:bold}${color1}MEMORY ($memperc%) $mem / $memmax ${color2}${membar 12}
 ${memgraph 000000 8700df-t}
 ${color0}$alignr CPU%   ${color}MEM%
@@ -94,7 +89,7 @@ ${color3}${top_mem pid 3} ${top name 3}  $alignr$color0${top cpu 3} $color${top 
 ${color3}${top_mem pid 4} ${top name 4}  $alignr$color0${top cpu 4} $color${top mem 4}
 
 
-${voffset -40}
+${voffset -50}
 ${voffset -10}$color${font AvantGarde LT ExtraLight:pixelsize=110}${alignr}${time %H}${font AvantGarde LT ExtraLight:pixelsize=110}${alignr}$color0${time %M}
 ${voffset -220}$color${font AvantGarde LT ExtraLight:pixelsize=30}
 ${time %a} $color0${time %d}$color
@@ -105,6 +100,10 @@ $conky_build_arch
 
 
 ${voffset -40}
+${font Arial:bold}${color1}SYSTEM ${color2} ${hr 2}
+${color3}Uptime:$color $uptime
+
+
 ${font Arial:bold}${color1}SWAP ${color2}$swap/$swapmax - $swapperc% ${swapbar 12}
 $colorΔ $entropy_avail/$entropy_poolsize ($entropy_perc%) ${entropy_bar 12}
 http://archive09.linux.com/feature/136147
