@@ -190,6 +190,12 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'smancill/conky-syntax.vim'
 
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'pkukulak/idle'
+
+Plugin 'tpope/vim-jdaddy'
+
 
 if has('unix')
 		" "				" Syntastic - Perl Checker Settings
