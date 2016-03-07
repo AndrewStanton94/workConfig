@@ -1,0 +1,14 @@
+deb/authcoretree.git
+deb/authsmoothd.git
+deb/dhcpcoretree.git
+deb/dhcpsmoothd.git
+deb/dnsmasq.git
+deb/imcoretree.git
+deb/imsmoothd.git
+deb/imspector.git
+deb/ixgbe.git
+deb/libsmoothwall-configmodel-ftp-perl.git
+deb/libsmoothwall-im-perl.git
+deb/libsmoothwall-reverseproxy-perl.git
+deb/oracle-java.git
+deb/libjson-webtoken-perl.git
