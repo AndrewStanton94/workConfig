@@ -5,7 +5,11 @@ ta() {
     then
         echo "Creating first session, name: "
         read sessionName
-        tmux new -s $sessionName
+		if [ "$sessionName" = "" ]
+		then
+			sessionName="Main"
+		fi
+        tmux new -s "$sessionName"
     else
         numberOfSessions=$(echo "$sessions"| wc -l)
         if [ "$numberOfSessions" -gt 1 ]
