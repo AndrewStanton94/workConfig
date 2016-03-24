@@ -182,7 +182,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-obsession.git'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-perl/vim-perl.git'
-Plugin 'vim-scripts/taglist.vim.git'
+" Plugin 'vim-scripts/taglist.vim.git'
+Plugin 'gaosld/vim-scripts-taglist'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -195,6 +196,7 @@ Plugin 'xolox/vim-easytags'
 Plugin 'pkukulak/idle'
 
 Plugin 'tpope/vim-jdaddy'
+Plugin 'https://github.com/edsono/vim-matchit.git'
 
 
 if has('unix')
@@ -240,9 +242,9 @@ set omnifunc=syntaxcomplete#Complete
 
 "{{{ Tlist
 " let Tlist_Ctags_Cmd='C:\Program Files\ctags58\ctags.exe'
-let Tlist_Auto_Update = 0
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
+let Tlist_Auto_Update = 1
 let Tlist_Display_Prototype = 1
-let Tlist_Display_Tag_Scope = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Inc_Winwidth = 0	"Don't resize window on open taglist

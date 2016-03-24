@@ -87,3 +87,4 @@ alias cls='clear && ls'
 alias ta="~/Downloads/workConfig/ta.zsh"
 alias e="nvim"
 alias overlord="pushd && cd ~/Downloads/overlord && nodejs ~/Downloads/overlord/overlord.js && popd && echo 'hi'"
+export OVERLORD="$HOME/Downloads/overlord"
