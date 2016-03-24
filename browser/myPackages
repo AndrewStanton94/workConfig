@@ -1,1 +1,1 @@
-./browse.sh urls.txt 'http://gitweb.container.soton.smoothwall.net/?p=' ';a=summary'
+./browse.sh debList 'http://gitweb.container.soton.smoothwall.net/?p=' ';a=summary'
