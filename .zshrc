@@ -59,9 +59,7 @@ export LANG=en_GB.UTF-8
 export TERM="screen-256color"
 
 alias sup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
-alias smh="ssh andrew.stanton@sotonfs.soton.smoothwall.net"
-alias asf="libreoffice /media/andrew/TI31061100A/Users/Andrew/Dropbox/_ASF.ods &"
-
+alias asf="libreoffice /home/andrew/Dropbox/_ASF.ods &"
 
 soton() {
     scp "$1" "andrew.stanton@sotonfs:"
