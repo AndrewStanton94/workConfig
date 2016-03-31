@@ -256,6 +256,9 @@ let Tlist_WinWidth = 40
 
 " colorscheme harlequin
 colorscheme distinguished
+highlight SpellBad ctermfg=202 ctermbg=52 cterm=bold
+" Needed to prevent cursorline hiding typos. This repo has stagnated so no
+" point pushing a fix upstream.
 
 "{{{
 function! SmartStartLine()
@@ -267,6 +270,7 @@ function! SmartStartLine()
         echo "^"
     endif
 endfunction
+
 nnoremap 0 :call SmartStartLine()<cr>
 nnoremap <k0> :call SmartStartLine()<cr>
 
